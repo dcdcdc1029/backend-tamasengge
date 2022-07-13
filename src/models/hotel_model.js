@@ -1,0 +1,41 @@
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const HotelPost = new Schema({
+    nama: {
+        type: String,
+        required: true
+    },
+    type: {
+        type: Number,
+        required: true
+    },
+    harga: {
+        type: Number,
+        required: true
+    },
+    alamat: {
+        type: String,
+        required: true
+    },
+    deskripsi: {
+        type: String,
+        required: true
+    },
+    contact: {
+        type: Number,
+        required: true
+    },
+    image: {
+        type: String,
+        required: true
+    },
+    author: {
+        type: Object,
+        required: true
+    }
+}, {
+    timestamps: true
+})
+
+module.exports = mongoose.model("HotelPost", HotelPost);
