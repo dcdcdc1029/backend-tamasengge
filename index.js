@@ -62,6 +62,6 @@ app.use((error, req, res, next) => {
 const PORT = 8080;
 mongoose.connect('mongodb+srv://dc:272829@cluster0.ukrbjbv.mongodb.net/tamasengge?retryWrites=true&w=majority')
 .then(() => {
-    app.listen(PORT, () => console.log("Connection Success!"))
+    app.listen(process.env.PORT || PORT, () => console.log("Connection Success!"))
 })
 .catch(err => console.log('Error :=> ', err))
