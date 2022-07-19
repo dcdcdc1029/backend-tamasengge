@@ -27,7 +27,7 @@ const HotelPost = new Schema({
         required: true
     },
     image: {
-        type: Object,
+        type: Array,
         required: true
     },
     author: {
