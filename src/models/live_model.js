@@ -38,4 +38,4 @@ const LivePost = new Schema({
     timestamps: true
 })
 
-module.exports = mongoose.model("HotelPost", HotelPost);
+module.exports = mongoose.model("LivePost", LivePost);
