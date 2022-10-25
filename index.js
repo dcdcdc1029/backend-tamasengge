@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const hotelRoutes = require('./src/routes/hotel');
+const liveRoutes = require('./src/routes/lives');
 const mongoose = require('mongoose');
 const multer = require('multer');
 const path = require('path');
@@ -49,6 +50,7 @@ app.use("/images", express.static(path.join(__dirname, "images"))); //middleware
 app.use(multer({storage: fileStorage, fileFilter: fileFilter}).single("image"));
 
 app.use("/v1/api/hotel", hotelRoutes);
+app.use("/v1/api/live", liveRoutes);
 
 // handle error
 app.use((error, req, res, next) => {
