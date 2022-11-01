@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {body} = require('express-validator');
-const hotelController = require('../controllers/hote'); //err sini
+const hotelController = require('../controllers/hotel'); //err sini
 
 //tambah data hotel
 router.post("/", [
