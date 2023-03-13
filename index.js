@@ -62,8 +62,20 @@ app.use((error, req, res, next) => {
 
 // serve
 // const PORT = 8080;
-mongoose.connect('mongodb+srv://dc:272829@cluster0.ukrbjbv.mongodb.net/tamasengge?retryWrites=true&w=majority')
+
+require('dns').resolve('www.google.com', function(err) {
+    if (err) {
+       console.log("Connection Fail!");
+       stop
+    } else {
+        console.log("Connection Success!")
+    }
+});
+
+// mongoose.connect('mongodb+srv://dc:272829@cluster0.ukrbjbv.mongodb.net/tamasengge?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://dc:272829@cluster0.ukrbjbv.mongodb.net/tamasengge?appName=mongosh+1.8.0')
+// mongoose.connect('mongodb://localhost:27017/tamasengge?appName=mongosh+1.8.0')
 .then(() => {
-    app.listen(process.env.PORT || 8080, () => console.log("Connection Success!"))
+    app.listen(process.env.PORT || 8080, () => console.log("Connected"))
 })
 .catch(err => console.log('Error :=> ', err))
